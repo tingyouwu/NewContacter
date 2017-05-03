@@ -1,6 +1,5 @@
 package com.future.wk.newcontacter.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -16,8 +15,6 @@ import com.future.wk.newcontacter.base.mvp.presenter.BasePresenter;
 import com.future.wk.newcontacter.base.view.TabStripView;
 
 import butterknife.Bind;
-//import org.greenrobot.eventbus.EventBus;
-//import org.greenrobot.eventbus.Subscribe;
 
 public class MainActivity extends BaseActivity {
     private static String TAG = "MainActivity";
@@ -31,11 +28,6 @@ public class MainActivity extends BaseActivity {
         activity.startActivity(intent);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
     @Override
     public BasePresenter getPresenter() {
         return null;

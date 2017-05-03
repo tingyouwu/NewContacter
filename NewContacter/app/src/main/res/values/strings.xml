@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewContacter</string>
+    <string name="network_failed">Current NetWork Error,Please Check it.</string>
+</resources>

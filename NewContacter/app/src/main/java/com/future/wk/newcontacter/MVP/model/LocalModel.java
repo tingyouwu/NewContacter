@@ -1,6 +1,6 @@
-package com.future.wk.newcontacter.MVP.model;
+package com.future.wk.newcontacter.mvp.model;
 
-import com.future.wk.newcontacter.MVP.contract.ILocalContract;
+import com.future.wk.newcontacter.mvp.contract.ILocalContract;
 
 /**
  * Created by samsung on 2017/5/3.

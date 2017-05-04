@@ -1,7 +1,7 @@
-package com.future.wk.newcontacter.MVP.presenter;
+package com.future.wk.newcontacter.mvp.presenter;
 
-import com.future.wk.newcontacter.MVP.contract.ILocalContract;
-import com.future.wk.newcontacter.MVP.model.LocalModel;
+import com.future.wk.newcontacter.mvp.contract.ILocalContract;
+import com.future.wk.newcontacter.mvp.model.LocalModel;
 import com.future.wk.newcontacter.base.mvp.presenter.BasePresenter;
 
 /**

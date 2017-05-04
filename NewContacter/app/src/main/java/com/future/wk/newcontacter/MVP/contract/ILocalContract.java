@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.MVP.contract;
+package com.future.wk.newcontacter.mvp.contract;
 
 import com.future.wk.newcontacter.base.mvp.model.IBaseModel;
 import com.future.wk.newcontacter.base.mvp.view.IBaseView;

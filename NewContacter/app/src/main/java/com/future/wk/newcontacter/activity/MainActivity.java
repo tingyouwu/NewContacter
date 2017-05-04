@@ -7,7 +7,7 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.future.wk.newcontacter.MVP.view.LocalContacterFragment;
+import com.future.wk.newcontacter.mvp.view.LocalContacterFragment;
 import com.future.wk.newcontacter.R;
 import com.future.wk.newcontacter.base.Log;
 import com.future.wk.newcontacter.base.activity.BaseActivity;
@@ -51,8 +51,8 @@ public class MainActivity extends BaseActivity {
         //恢复选项状态
         navigateTabBar.onRestoreInstanceState(savedInstanceState);
 
-        navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_local_normal, R.mipmap.ic_tab_local_pressed, "本地"));
-        navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_network_normal, R.mipmap.ic_tab_network_pressed, "网络"));
+        navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_local_normal, R.mipmap.ic_tab_local_pressed, "通讯录"));
+        navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_network_normal, R.mipmap.ic_tab_network_pressed, "微服务"));
         navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_setting_normal, R.mipmap.ic_tab_setting_pressed, "设置"));
 
         Log.d(TAG,"onInitView end");

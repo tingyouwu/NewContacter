@@ -1,9 +1,9 @@
-package com.future.wk.newcontacter.MVP.view;
+package com.future.wk.newcontacter.mvp.view;
 
 import android.os.Bundle;
 
-import com.future.wk.newcontacter.MVP.contract.ILocalContract;
-import com.future.wk.newcontacter.MVP.presenter.LocalPresenter;
+import com.future.wk.newcontacter.mvp.contract.ILocalContract;
+import com.future.wk.newcontacter.mvp.presenter.LocalPresenter;
 import com.future.wk.newcontacter.R;
 import com.future.wk.newcontacter.base.fragment.BaseFragment;
 

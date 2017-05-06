@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.fragment;
+package com.future.wk.newcontacter.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,14 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.future.wk.newcontacter.base.activity.BaseActivity;
-import com.future.wk.newcontacter.base.view.sweetdialog.OnDismissCallbackListener;
+import com.future.wk.newcontacter.base.BaseActivity;
 import com.future.wk.newcontacter.base.mvp.IBase;
 import com.future.wk.newcontacter.base.mvp.presenter.BasePresenter;
 import com.future.wk.newcontacter.base.mvp.view.IBaseView;
 
 import butterknife.ButterKnife;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
  * @author wty
@@ -142,44 +140,4 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
         }
     }
 
-    /**
-     * @Decription 检查网络是否连接
-     **/
-    public boolean checkNet() {
-        return activity.checkNet();
-    }
-
-    /**
-     * @Decription 弹框提示
-     **/
-    public void onToast(OnDismissCallbackListener callback){
-        activity.onToast(callback);
-    }
-
-    public void showSuccess(final String msg){
-        onToast(new OnDismissCallbackListener(msg, SweetAlertDialog.SUCCESS_TYPE));
-    }
-
-    public void showFailed(final String msg){
-        onToast(new OnDismissCallbackListener(msg, SweetAlertDialog.ERROR_TYPE));
-    }
-
-    public void showAppToast(final String msg){
-        activity.showAppToast(msg);
-    }
-
-    /**
-     * @Decription 提示加载中
-     **/
-    public void showLoading(String msg){
-        activity.showLoading(msg);
-    }
-
-    public void dismissLoading(){
-        dismissLoading(null);
-    }
-
-    public void dismissLoading(final OnDismissCallbackListener callback){
-        activity.dismissLoading(callback);
-    }
 }

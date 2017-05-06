@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.future.wk.newcontacter.base.utils;
+package com.future.wk.newcontacter.util;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;

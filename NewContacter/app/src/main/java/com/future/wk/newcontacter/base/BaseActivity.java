@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.activity;
+package com.future.wk.newcontacter.base;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
@@ -18,10 +18,10 @@ import com.future.wk.newcontacter.R;
 import com.future.wk.newcontacter.base.mvp.IBase;
 import com.future.wk.newcontacter.base.mvp.presenter.BasePresenter;
 import com.future.wk.newcontacter.base.mvp.view.IBaseView;
-import com.future.wk.newcontacter.base.utils.NetWorkUtils;
-import com.future.wk.newcontacter.base.utils.SystemBarTintManager;
-import com.future.wk.newcontacter.base.view.navigation.NavigationText;
-import com.future.wk.newcontacter.base.view.sweetdialog.OnDismissCallbackListener;
+import com.future.wk.newcontacter.util.NetWorkUtils;
+import com.future.wk.newcontacter.util.SystemBarTintManager;
+import com.future.wk.newcontacter.widget.navigation.NavigationText;
+import com.future.wk.newcontacter.widget.sweetdialog.OnDismissCallbackListener;
 
 import java.util.ArrayList;
 import java.util.List;

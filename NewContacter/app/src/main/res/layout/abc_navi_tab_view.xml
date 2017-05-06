@@ -14,16 +14,17 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/blue"
-        android:textSize="9.0sp" />
+        android:textSize="6sp" />
 
     <ImageView
         android:id="@+id/tab_icon"
-        android:layout_width="24dp"
+        android:layout_width="28dp"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_above="@id/tab_title"
         android:layout_alignParentTop="true"
         android:layout_marginTop="7dp"
+        android:layout_marginBottom="2dp"
         android:src="@mipmap/ic_camera"
         android:scaleType="centerInside" />
 

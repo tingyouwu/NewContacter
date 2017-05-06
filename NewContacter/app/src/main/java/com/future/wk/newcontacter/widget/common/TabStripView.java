@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.view;
+package com.future.wk.newcontacter.widget.common;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -17,11 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.future.wk.newcontacter.base.Log;
-import com.future.wk.newcontacter.base.utils.ScreenUtil;
+import com.future.wk.newcontacter.util.ScreenUtil;
 import com.future.wk.newcontacter.R;
-import com.future.wk.newcontacter.base.activity.BaseActivity;
-import com.future.wk.newcontacter.base.fragment.BaseFragment;
+import com.future.wk.newcontacter.base.BaseActivity;
+import com.future.wk.newcontacter.base.BaseFragment;
 
 
 import java.util.ArrayList;
@@ -99,7 +98,6 @@ public class TabStripView extends LinearLayout implements View.OnClickListener {
 
 
     public void addTab(Class frameLayoutClass, TabParam tabParam) {
-        Log.d(TAG,"addTab");
         int defaultLayout = R.layout.abc_navi_tab_view;
 //        if (tabParam.tabViewResId > 0) {
 //            defaultLayout = tabParam.tabViewResId;
@@ -145,14 +143,11 @@ public class TabStripView extends LinearLayout implements View.OnClickListener {
         } else {
             holder.tabIcon.setVisibility(View.INVISIBLE);
         }
-        Log.d(TAG,"KMA ...iconResId:"+tabParam.iconResId);
-        Log.d(TAG,"KMA ...iconSelectedResId:"+tabParam.iconSelectedResId);
         if (tabParam.iconResId > 0 && tabParam.iconSelectedResId > 0) {
             view.setTag(holder);
             view.setOnClickListener(this);
             mViewHolderList.add(holder);
         }
-        Log.d(TAG,"mViewHolderList size:"+mViewHolderList.size());
 
         mViewHolderMap.put(tabParam.title,holder);
         addView(view, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0F));
@@ -165,7 +160,6 @@ public class TabStripView extends LinearLayout implements View.OnClickListener {
      **/
     @Override
     protected void onAttachedToWindow() {
-        Log.d(TAG,"onAttachedToWindow");
         super.onAttachedToWindow();
         if (mMainContentLayoutId == 0) {
             throw new RuntimeException("mFrameLayoutId Cannot be 0");

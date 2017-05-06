@@ -13,7 +13,7 @@
         android:layout_alignParentLeft="true"
         android:gravity="left" >
 
-        <com.future.wk.newcontacter.base.view.navigation.NavigationBackButton
+        <com.future.wk.newcontacter.widget.navigation.NavigationBackButton
             android:id="@+id/navigation_btn_left"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

@@ -5,11 +5,7 @@ import android.os.Bundle;
 import com.future.wk.newcontacter.mvp.contract.ILocalContract;
 import com.future.wk.newcontacter.mvp.presenter.LocalPresenter;
 import com.future.wk.newcontacter.R;
-import com.future.wk.newcontacter.base.fragment.BaseFragment;
-
-/**
- * Created by samsung on 2017/5/3.
- */
+import com.future.wk.newcontacter.base.BaseFragment;
 
 public class LocalContacterFragment extends BaseFragment<LocalPresenter> implements ILocalContract.ILocalView{
 
@@ -20,7 +16,6 @@ public class LocalContacterFragment extends BaseFragment<LocalPresenter> impleme
 
     @Override
     public void onInitView(Bundle savedInstanceState){
-        //...
     }
 
     @Override
@@ -30,11 +25,5 @@ public class LocalContacterFragment extends BaseFragment<LocalPresenter> impleme
 
     @Override
     public void showContactList(){
-        //...
-    }
-
-    @Override
-    public boolean checkNet() {
-        return super.checkNet();
     }
 }

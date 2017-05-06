@@ -19,7 +19,7 @@
         android:layout_marginBottom="50dp"
         android:background="#dedede" />
 
-    <com.future.wk.newcontacter.base.view.TabStripView
+    <com.future.wk.newcontacter.widget.common.TabStripView
         android:id="@+id/navigateTabBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -27,5 +27,5 @@
         app:containerId="@id/main_container"
         app:navigateTabSelectedTextColor="@color/colorPrimary"
         app:navigateTabTextColor="@color/colorPrimary"
-        app:navigateTabTextSize="12sp" />
+        app:navigateTabTextSize="11sp" />
 </RelativeLayout>

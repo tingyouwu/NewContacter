@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.utils;
+package com.future.wk.newcontacter.util;
 
 import android.content.Context;
 import android.content.res.TypedArray;

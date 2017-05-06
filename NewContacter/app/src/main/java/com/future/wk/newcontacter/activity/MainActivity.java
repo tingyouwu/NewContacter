@@ -7,26 +7,19 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.future.wk.newcontacter.base.NCObjectCache;
 import com.future.wk.newcontacter.mvp.view.LocalContacterFragment;
 import com.future.wk.newcontacter.R;
-import com.future.wk.newcontacter.base.Log;
-import com.future.wk.newcontacter.base.activity.BaseActivity;
+import com.future.wk.newcontacter.base.BaseActivity;
 import com.future.wk.newcontacter.base.mvp.presenter.BasePresenter;
-import com.future.wk.newcontacter.base.view.TabStripView;
+import com.future.wk.newcontacter.widget.common.TabStripView;
 
 import butterknife.Bind;
 
 public class MainActivity extends BaseActivity {
-    private static String TAG = "MainActivity";
 
     @Bind(R.id.navigateTabBar)
     TabStripView navigateTabBar;
-
-    public static void startMainActivity(Activity activity) {
-        Log.d(TAG,"startMainActivity");
-        Intent intent = new Intent(activity, MainActivity.class);
-        activity.startActivity(intent);
-    }
 
     @Override
     public BasePresenter getPresenter() {
@@ -39,7 +32,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onInitView(Bundle savedInstanceState) {
-        Log.d(TAG,"onInitView start");
         //EventBus.getDefault().register(this);
         //对应xml中的containerId
         navigateTabBar.setFrameLayoutId(R.id.main_container);
@@ -54,8 +46,6 @@ public class MainActivity extends BaseActivity {
         navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_local_normal, R.mipmap.ic_tab_local_pressed, "通讯录"));
         navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_network_normal, R.mipmap.ic_tab_network_pressed, "微服务"));
         navigateTabBar.addTab(LocalContacterFragment.class, new TabStripView.TabParam(R.mipmap.ic_tab_setting_normal, R.mipmap.ic_tab_setting_pressed, "设置"));
-
-        Log.d(TAG,"onInitView end");
     }
 
     @Override
@@ -67,7 +57,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onResume() {
-        Log.d(TAG,"onResume");
         super.onResume();
     }
 
@@ -101,5 +90,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        NCObjectCache.getInstance().clearCache();
+        NCObjectCache.getInstance().closeAllDB();
+        NCObjectCache.getInstance().finishAllActivity();
     }
 }

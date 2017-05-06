@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.view.navigation;
+package com.future.wk.newcontacter.widget.navigation;
 
 import android.app.Activity;
 import android.content.Context;

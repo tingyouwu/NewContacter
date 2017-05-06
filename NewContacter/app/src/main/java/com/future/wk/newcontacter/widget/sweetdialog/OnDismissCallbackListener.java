@@ -1,4 +1,4 @@
-package com.future.wk.newcontacter.base.view.sweetdialog;
+package com.future.wk.newcontacter.widget.sweetdialog;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 

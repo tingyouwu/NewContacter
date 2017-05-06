@@ -2,6 +2,7 @@ package com.future.wk.newcontacter.base;
 
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -41,7 +42,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
     protected View mRootView;
     protected SystemBarTintManager tintManager;//沉浸式状态栏
     public SweetAlertDialog loadingdialog;
-
+    private OnActivityResultListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -244,6 +245,16 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
                                 .setConfirmText("确定")
                                 .setConfirmClickListener(callback)
                                 .changeAlertType(callback.alertType);
+
+                        loadingdialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+                            @Override
+                            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                                if(keyCode == KeyEvent.KEYCODE_BACK){
+                                    callback.onCallback();
+                                }
+                                return false;
+                            }
+                        });
                     }
                 }
             }.start();
@@ -279,9 +290,29 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
      * @Decription 显示Toast
      **/
     public void showAppToast(String msg){
-       // AppMsg.makeText(this,msg,AppMsg.STYLE_INFO).show();
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
 
+    }
+
+    /**
+     * 在 startActivityForResult 基础上包一层 listener，从而将返回数据放在 listener 的 onResult() 方法中实现
+     * @param intent
+     * @param onActivityResultListener
+     */
+    public void startActivityForListener(Intent intent, OnActivityResultListener onActivityResultListener) {
+        this.listener = onActivityResultListener;
+        startActivityForResult(intent, 1011);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            if (listener!=null){
+                listener.onResult(data);
+            }
+        }
+        listener = null;
     }
 
 }

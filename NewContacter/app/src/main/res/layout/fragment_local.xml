@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:background="@color/layout_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+
+    <com.future.wk.newcontacter.widget.common.SearchView
+        android:id="@+id/searchview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="50sp"
-        android:text="本地联系人"/>
+        android:layout_height="wrap_content">
+    </com.future.wk.newcontacter.widget.common.SearchView>
+
+    <RelativeLayout
+        android:id="@+id/contactLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.future.wk.newcontacter.widget.xrecyclerview.XRecyclerView
+            android:id="@+id/contactListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.future.wk.newcontacter.widget.common.SideBar
+            android:id="@+id/filter_letters"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/tv_letter"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/show_head_toast_bg"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30dip"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
 </LinearLayout>

@@ -24,7 +24,7 @@
         android:layout_above="@id/tab_title"
         android:layout_alignParentTop="true"
         android:layout_marginTop="7dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="4dp"
         android:src="@mipmap/ic_camera"
         android:scaleType="centerInside" />
 

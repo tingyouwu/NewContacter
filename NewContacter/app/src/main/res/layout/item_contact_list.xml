@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="70dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_contact_alpha"
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="#f8f8f8"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dip"
+        android:textSize="15sp"
+        tools:text="A" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dip"
+        android:background="@drawable/selector_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:orientation="vertical">
+
+            <com.future.wk.newcontacter.widget.roundedimageview.RoundedImageView
+                android:id="@+id/item_contact_icon"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/male"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/image_contentDescription"
+                app:riv_mutate_background="true"
+                app:riv_oval="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="70dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="13dip"
+                android:ellipsize="end"
+                android:maxWidth="150dip"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="人民的名义"
+                tools:text="李小璐" />
+
+
+            <TextView
+                android:id="@+id/item_contact_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="13dip"
+                android:ellipsize="end"
+                android:maxWidth="200dip"
+                android:singleLine="true"
+                android:textColor="@color/gray_font_3"
+                android:textSize="13sp"
+                android:text="13000800080"
+                tools:text="13000800080" />
+
+            <ImageView
+                android:id="@+id/item_contact_message"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@+id/item_contact_phone"
+                android:contentDescription="@string/image_contentDescription"
+                android:padding="5dp"
+                android:src="@mipmap/img_sendmessage"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/item_contact_phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="30dp"
+                android:contentDescription="@string/image_contentDescription"
+                android:padding="5dp"
+                android:src="@mipmap/img_mobile" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

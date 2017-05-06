@@ -73,44 +73,32 @@
         <attr name="itemViewImage" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="FormItemView">
-        <attr name="formLabel" format="string" />
-        <attr name="formHint" format="string" />
-        <attr name="formRequired" format="boolean" />
-        <attr name="formReadOnly" format="boolean" />
-        <attr name="formMaxLength" format="integer" />
-        <attr name="formSelectOption" format="string" />
-        <attr name="formDefaultDate" format="string" />
-        <attr name="formContentType">
-            <enum name="Text" value="1" />
-            <enum name="Int" value="2" />
-            <enum name="Password" value="3" />
-            <enum name="Decimal" value="4" />
-            <enum name="Money" value="5" />
-            <enum name="SingleSelect" value="6" />
-            <enum name="Location" value="8" />
-            <enum name="Date" value="9" />
-            <enum name="DateTime" value="10" />
+    <declare-styleable name="RoundedImageView">
+        <attr name="riv_corner_radius" format="dimension" />
+        <attr name="riv_corner_radius_top_left" format="dimension" />
+        <attr name="riv_corner_radius_top_right" format="dimension" />
+        <attr name="riv_corner_radius_bottom_left" format="dimension" />
+        <attr name="riv_corner_radius_bottom_right" format="dimension" />
+        <attr name="riv_border_width" format="dimension" />
+        <attr name="riv_border_color" format="color" />
+        <attr name="riv_mutate_background" format="boolean" />
+        <attr name="riv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="riv_tile_mode">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
         </attr>
-    </declare-styleable>
-
-    <declare-styleable name="ToggleButton">
-        <attr name="bordWidth" format="dimension"></attr>
-        <attr name="offBordColor" format="reference|color"></attr>
-        <attr name="offColor" format="reference|color"></attr>
-        <attr name="onColor" format="reference|color"></attr>
-        <attr name="spotColor" format="reference|color"></attr>
-        <attr name="animate" format="reference|boolean"></attr>
-    </declare-styleable>
-
-    <declare-styleable name="UnreadView">
-        <attr name="unread" format="integer" />
-    </declare-styleable>
-
-    <declare-styleable name="CheckBoxLabel">
-        <attr name="labelTextColor" format="integer" />
-        <attr name="labelTextSize" format="integer" />
-        <attr name="label" format="string" />
+        <attr name="riv_tile_mode_x">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
+        <attr name="riv_tile_mode_y">
+            <enum name="clamp" value="0" />
+            <enum name="repeat" value="1" />
+            <enum name="mirror" value="2" />
+        </attr>
     </declare-styleable>
 
 </resources>

@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/copytext_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip"
+        android:background="@drawable/selector_white"
+        android:gravity="center|left"
+        android:padding="12dip" >
+
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="复制"
+            android:textColor="@color/gray_font_2"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

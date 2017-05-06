@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_circle_radius">34dp</dimen>
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="alert_width">300dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--xrecyclerview-->
+    <dimen name="textandiconmargin">10dp</dimen>
+    <!--xrecyclerview-->
+
+    <!--sheetview-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="card_insets">0dp</dimen>
+    <dimen name="card_min_width">240dp</dimen>
+    <dimen name="card_staggered_height">240dp</dimen>
+    <!--sheetview-->
+
+</resources>

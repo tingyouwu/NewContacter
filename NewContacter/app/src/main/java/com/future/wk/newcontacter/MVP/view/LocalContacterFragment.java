@@ -85,6 +85,18 @@ public class LocalContacterFragment extends BaseFragment<LocalPresenter> impleme
             }
         });
 
+        listview.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                listview.refreshComplete("");
+            }
+
+            @Override
+            public void onLoadMore() {
+
+            }
+        });
+
         mDataList.add(new ContactDALEx());
         mDataList.add(new ContactDALEx());
         mDataList.add(new ContactDALEx());

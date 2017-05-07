@@ -5,19 +5,19 @@ import android.os.Bundle;
 import com.future.wk.newcontacter.R;
 import com.future.wk.newcontacter.base.BaseFragment;
 import com.future.wk.newcontacter.mvp.contract.ILocalContract;
-import com.future.wk.newcontacter.mvp.contract.ISettingContract;
+import com.future.wk.newcontacter.mvp.contract.INetworkContract;
 import com.future.wk.newcontacter.mvp.presenter.LocalPresenter;
-import com.future.wk.newcontacter.mvp.presenter.SettingPresenter;
+import com.future.wk.newcontacter.mvp.presenter.NetworkPresenter;
 
 /**
  * Created by samsung on 2017/5/3.
  */
 
-public class MyselfFragment extends BaseFragment<SettingPresenter> implements ISettingContract.ISettingView{
+public class NetworkContacterFragment extends BaseFragment<NetworkPresenter> implements INetworkContract.INetworkView{
 
     @Override
-    public SettingPresenter getPresenter(){
-        return new SettingPresenter();
+    public NetworkPresenter getPresenter(){
+        return new NetworkPresenter();
     }
 
     @Override
@@ -27,11 +27,11 @@ public class MyselfFragment extends BaseFragment<SettingPresenter> implements IS
 
     @Override
     public int getLayoutResource(){
-        return R.layout.fragment_setting;
+        return R.layout.fragment_network;
     }
 
     @Override
-    public void showSettingList(){
+    public void showNetworkContactList(){
         //...
     }
 

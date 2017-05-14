@@ -17,4 +17,7 @@
     <string name="loading_done">Loading Done</string>
     <string name="listview_header_last_time">Recently Refresh：</string>
 
+    <string name="tab_1">已选号码</string>
+    <string name="tab_2">全部号码</string>
+
 </resources>

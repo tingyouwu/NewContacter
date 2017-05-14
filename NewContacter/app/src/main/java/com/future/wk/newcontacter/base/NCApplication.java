@@ -11,6 +11,10 @@ import com.orhanobut.logger.Logger;
  **/
 public class NCApplication extends Application {
 
+	public static final String LocalTag = "通讯录";
+	public static final String NetworkTag = "微服务";
+	public static final String MyselfTag = "设置";
+
 	@Override
 	public void onCreate() {
 		super.onCreate();

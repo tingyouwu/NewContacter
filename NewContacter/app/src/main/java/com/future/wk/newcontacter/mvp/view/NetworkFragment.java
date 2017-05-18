@@ -51,7 +51,7 @@ public class NetworkFragment extends BaseFragment<NetworkPresenter> implements I
     private int position_one;
     public final static int num = 2 ;
     NetworkContacterFragment home1;
-    NetworkContacterFragment home2;
+    YellowPageFragment home2;
 
     private static String TAG = "NetworkFragment";
 
@@ -132,7 +132,7 @@ public class NetworkFragment extends BaseFragment<NetworkPresenter> implements I
         fragmentsList = new ArrayList<Fragment>();
 
         home1 = new NetworkContacterFragment();
-        home2 = new NetworkContacterFragment();
+        home2 = new YellowPageFragment();
 
         fragmentsList.add(home1);
         fragmentsList.add(home2);

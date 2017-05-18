@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kuangminan on 2017/5/14.
@@ -30,11 +31,11 @@ public class YellowPageModel implements IYellowPageContract.IYellowPageModel {
     }
 
     @Override
-    public ArrayList getYellowPageDetail(Context context, String category ){
+    public List<ContactDALEx> getYellowPageDetail(Context context, String category ){
         // 从Asset文件中找到文件，获取json字符串
         AssetManager assetManager = context.getAssets();
         InputStream inputStream = null;
-        ArrayList<ContactDALEx> contactList = new ArrayList<ContactDALEx>();
+        List<ContactDALEx> contactList = new ArrayList<ContactDALEx>();
         try{
             inputStream = assetManager.open("YP.json");
             String jsonStr = readInPutStream(inputStream);

@@ -112,6 +112,24 @@ public class LocalContacterFragment extends BaseFragment<LocalPresenter> impleme
     }
 
     @Override
+    public void initFragmentActionBar(String title) {
+        super.initFragmentActionBar(title);
+
+        activity.getDefaultNavigation().getLeftButton().setButton(R.mipmap.female, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        activity.getDefaultNavigation().setRightButton(R.mipmap.actionbar_add, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+    }
+
+    @Override
     public int getLayoutResource(){
         return R.layout.fragment_local;
     }

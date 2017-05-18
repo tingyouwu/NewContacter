@@ -1,15 +1,10 @@
 package com.future.wk.newcontacter.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.future.wk.newcontacter.R;
 import com.future.wk.newcontacter.data.dalex.ContactDALEx;
 import com.future.wk.newcontacter.util.CorePinYinUtil;
-import com.future.wk.newcontacter.widget.roundedimageview.RoundedImageView;
 import com.future.wk.newcontacter.widget.xrecyclerview.adapter.BaseRecyclerViewAdapter;
 import com.future.wk.newcontacter.widget.xrecyclerview.adapter.BaseRecyclerViewHolder;
 

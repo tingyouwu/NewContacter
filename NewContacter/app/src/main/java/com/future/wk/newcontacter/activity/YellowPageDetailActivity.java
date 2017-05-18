@@ -94,9 +94,13 @@ public class YellowPageDetailActivity extends BaseActivity<YellowPagePresenter> 
             }
         });
 
+        /*for(int i = 0; i < 15; i++) {
+            mNetDataList.add(new ContactDALEx());
+        }*/
+
         mypDataList = mPresenter.getYellowPageList(this, "dd");
         Log.d(TAG,"mypDataList length:"+mypDataList.size());
-        
+
         for(int i = 0; i < mypDataList.size(); i++) {
             Log.d(TAG,"mypDataList name:"+mypDataList.get(i).getUsername());
             Log.d(TAG,"mypDataList phone:"+mypDataList.get(i).getUserphone());

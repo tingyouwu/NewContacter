@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by kuangminan on 2017/5/14.
@@ -44,25 +45,24 @@ public class YellowPageModel implements IYellowPageContract.IYellowPageModel {
             Log.d(TAG,"length:"+length);
             for(int i = 0; i < length; i++){
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                //JSONObject jsonkuaidi = jsonObject.getJSONObject("kuaidi");
                 String item = jsonObject.getString("item");
                 String name = jsonObject.getString("name");
                 String number = jsonObject.getString("number");
-
-                Log.d(TAG,"Item:"+item);
-                Log.d(TAG,"name:"+name);
-                Log.d(TAG,"number:"+number);
-
-                ContactDALEx contactDALEx = new ContactDALEx();
-                contactDALEx.setUsername(name);
-                contactDALEx.setUserphone(number);
-                contactList.add(contactDALEx);
+                Log.d(TAG,"item:"+item+" category:"+category);
+                if(item.equals(category)) {
+                    ContactDALEx contactDALEx = new ContactDALEx();
+                    contactDALEx.setUsername(name);
+                    contactDALEx.setUserphone(number);
+                    contactDALEx.setYellowpage(1);
+                    contactList.add(contactDALEx);
+                }
             }
         }catch (JSONException e) {
             e.printStackTrace();
         }catch(IOException e){
             e.printStackTrace();
         }
+        Log.d(TAG,"contactList length:"+contactList.size());
         return contactList;
     }
 

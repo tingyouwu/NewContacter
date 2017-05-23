@@ -94,7 +94,7 @@ public class YellowPageDetailActivity extends BaseActivity<YellowPagePresenter> 
             }
         });
 
-        mypDataList.addAll(mPresenter.getYellowPageList(this, "dd"));
+        mypDataList.addAll(mPresenter.getYellowPageList(this, getIntent().getStringExtra("itemID")));
         Log.d(TAG,"mypDataList length:"+mypDataList.size());
 
         for(int i = 0; i < mypDataList.size(); i++) {

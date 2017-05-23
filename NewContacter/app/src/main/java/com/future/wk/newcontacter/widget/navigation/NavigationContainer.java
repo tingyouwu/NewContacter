@@ -2,6 +2,7 @@ package com.future.wk.newcontacter.widget.navigation;
 
 import android.app.Activity;
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.future.wk.newcontacter.R;
+import com.future.wk.newcontacter.widget.roundedimageview.RoundedImageView;
 
 /**
  * 自定义标题导航栏
@@ -18,9 +20,11 @@ public abstract class NavigationContainer extends LinearLayout {
 
 	LinearLayout layout_center;
 	View root;
-    LinearLayout layout_right;
+    LinearLayout layout_right,layout_right_custom;
+    LinearLayout layout_left,layout_left_custom;
     NavigationBackButton btn_left;
     NavigationButton btn_right,btn_right2;
+    RoundedImageView icon;
     LayoutParams layoutParams;
 	public NavigationContainer(Context context) {
 		super(context);
@@ -39,7 +43,11 @@ public abstract class NavigationContainer extends LinearLayout {
 		root = findViewById(R.id.navigation_root);
 		layout_center = (LinearLayout)findViewById(R.id.navigation_layout_center);
         layout_right = (LinearLayout)findViewById(R.id.navigation_layout_right);
+        layout_right_custom = (LinearLayout) findViewById(R.id.navigation_layout_customright);
+        layout_left_custom = (LinearLayout) findViewById(R.id.navigation_layout_customleft);
+        layout_left = (LinearLayout) findViewById(R.id.navigation_layout_left);
         btn_left = (NavigationBackButton)findViewById(R.id.navigation_btn_left);
+        icon = (RoundedImageView) findViewById(R.id.item_icon);
 		btn_left.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -91,6 +99,13 @@ public abstract class NavigationContainer extends LinearLayout {
         button.setButton(text, listener);
         layout_right.addView(button,0);
         btn_right2 = button;
+        return (T)this;
+    }
+
+    public <T extends NavigationContainer> T setCustomLeftIcon(String url,OnClickListener listener){
+        if(TextUtils.isEmpty(url)){
+
+        }
         return (T)this;
     }
 

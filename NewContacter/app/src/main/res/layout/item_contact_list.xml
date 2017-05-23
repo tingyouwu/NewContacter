@@ -64,7 +64,7 @@
 
 
             <TextView
-                android:id="@+id/item_contact_department"
+                android:id="@+id/item_contact_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -89,6 +89,19 @@
                 android:contentDescription="@string/image_contentDescription"
                 android:padding="5dp"
                 android:src="@mipmap/img_sendmessage"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/item_add_contact"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="30dp"
+                android:layout_toLeftOf="@+id/item_contact_phone"
+                android:contentDescription="@string/image_contentDescription"
+                android:padding="5dp"
+                android:src="@mipmap/ic_search"
                 android:visibility="gone" />
 
             <ImageView

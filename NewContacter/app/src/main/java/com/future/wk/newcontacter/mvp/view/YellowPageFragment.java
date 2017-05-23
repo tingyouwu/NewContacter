@@ -2,6 +2,7 @@ package com.future.wk.newcontacter.mvp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -13,6 +14,7 @@ import com.future.wk.newcontacter.activity.YellowPageDetailActivity;
 import com.future.wk.newcontacter.base.BaseFragment;
 import com.future.wk.newcontacter.mvp.contract.IYellowPageContract;
 import com.future.wk.newcontacter.mvp.presenter.YellowPagePresenter;
+import com.future.wk.newcontacter.util.YellowPageUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +22,8 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.Bind;
+
+import static com.future.wk.newcontacter.util.YellowPageUtil.YPItemNum;
 
 /**
  * Created by kuangminan on 2017/5/14.
@@ -29,15 +33,13 @@ public class YellowPageFragment extends BaseFragment<YellowPagePresenter> implem
     @Bind(R.id.yellowpage_gridview)
     GridView mGridView;
 
+    private String TAG = "YellowPageFragment";
     private String IMAGE_ITEM = "imgage_item";
     private String TEXT_ITEM = "text_item";
+    private String ID_ITEM = "ID_item";
     private List<Map<String,Object>> data_list;
     private SimpleAdapter simpleAdapter;
 
-    private int[] icon={R.mipmap.icon_min_head, R.mipmap.icon_min_head, R.mipmap.icon_min_head,R.mipmap.icon_min_head, R.mipmap.icon_min_head, R.mipmap.icon_min_head,
-            R.mipmap.icon_min_head, R.mipmap.icon_min_head, R.mipmap.icon_min_head,R.mipmap.icon_min_head, R.mipmap.icon_min_head, R.mipmap.icon_min_head,
-            R.mipmap.icon_min_head, R.mipmap.icon_min_head, R.mipmap.icon_min_head,R.mipmap.icon_min_head, R.mipmap.icon_min_head};
-    private String[] iconName={"快递","出租车","银行","美食","娱乐","酒店","列车","旅行","租车","汽车","运营商","网购","健康","市政","教育","游戏","保险",};
 
     @Override
     public YellowPagePresenter getPresenter(){
@@ -64,10 +66,11 @@ public class YellowPageFragment extends BaseFragment<YellowPagePresenter> implem
     private List<HashMap<String, Object>> getGridViewData() {
         List<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
 
-        for (int i=0; i<16; i++) {
+        for (int i = 0; i < YPItemNum; i++) {
             HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put(IMAGE_ITEM, icon[i]);
-            map.put(TEXT_ITEM, iconName[i]);
+            map.put(IMAGE_ITEM, YellowPageUtil.YPIcon[i]);
+            map.put(TEXT_ITEM, YellowPageUtil.YPIconName[i]);
+            map.put(ID_ITEM, YellowPageUtil.YPIconID[i]);
             list.add(map);
         }
         return list;
@@ -81,11 +84,12 @@ public class YellowPageFragment extends BaseFragment<YellowPagePresenter> implem
 
 
             String itemText=(String)item.get(TEXT_ITEM);
-            Object object=item.get(IMAGE_ITEM);
+            String itemID = (String)item.get(ID_ITEM);
             Toast.makeText(getActivity(),"You Select "+itemText,Toast.LENGTH_SHORT).show();
-                /*start the detail activity */
+            /*start the detail activity */
             Intent YPDetailIntent = new Intent(getActivity(), YellowPageDetailActivity.class);
-            YPDetailIntent.putExtra("detailName",itemText);
+            YPDetailIntent.putExtra("itemID",itemID);
+            Log.d(TAG,"start activity itemID:"+itemID);
             startActivity(YPDetailIntent);
         }};
 

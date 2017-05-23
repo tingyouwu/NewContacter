@@ -1,25 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_root"
     android:layout_width="fill_parent"
     android:layout_height="50dip"
-    android:background="@color/colorPrimary" >
+    android:background="@color/colorPrimary">
 
     <LinearLayout
-        android:layout_marginLeft="5dip"
         android:id="@+id/navigation_layout_left"
+        android:layout_marginLeft="5dip"
         android:layout_width="80dip"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:gravity="left" >
+        android:gravity="left"
+        android:orientation="horizontal">
 
         <com.future.wk.newcontacter.widget.navigation.NavigationBackButton
             android:id="@+id/navigation_btn_left"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="horizontal" />
+            android:orientation="horizontal"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_layout_customleft"
+        android:layout_marginLeft="5dip"
+        android:layout_width="80dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <com.future.wk.newcontacter.widget.roundedimageview.RoundedImageView
+            android:id="@+id/item_icon"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:background="@mipmap/female"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/image_contentDescription"
+            app:riv_mutate_background="true"
+            app:riv_oval="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_layout_customright"
+        android:layout_width="80dip"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/navigation_layout_right"
+        android:layout_toStartOf="@+id/navigation_layout_right" />
 
     <LinearLayout
         android:id="@+id/navigation_layout_right"

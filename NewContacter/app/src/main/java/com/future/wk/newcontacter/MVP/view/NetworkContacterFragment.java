@@ -83,9 +83,7 @@ public class NetworkContacterFragment extends BaseFragment<NetworkPresenter> imp
 
             }
         });
-        for(int i = 0; i < 15; i++) {
-            mNetDataList.add(new ContactDALEx());
-        }
+        mNetDataList.addAll(mPresenter.getAddYellowPageList(getContext()));
 
         netAdapter.notifyDataSetChanged();
     }

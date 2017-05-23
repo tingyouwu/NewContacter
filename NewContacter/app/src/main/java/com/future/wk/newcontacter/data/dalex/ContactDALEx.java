@@ -2,6 +2,7 @@ package com.future.wk.newcontacter.data.dalex;
 
 import android.database.Cursor;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.future.wk.newcontacter.base.store.db.BaseDB;
 import com.future.wk.newcontacter.base.store.db.SqliteBaseDALEx;
@@ -18,6 +19,7 @@ import java.util.List;
  */
 
 public class ContactDALEx extends SqliteBaseDALEx {
+    private static String TAG = "ContactDALEx";
 
     public static final String USERID = "userid";
     public static final String USERNAME = "username";
@@ -25,6 +27,7 @@ public class ContactDALEx extends SqliteBaseDALEx {
     public static final String NAMEPINYIN = "namepinyin";
     public static final String USERPHONE = "userphone";
     public static final String RECSTATUS = "recstatus";
+    public static final String YELLOWPAGE = "yellowpage";
 
     public static final String From_Contact = "From_Contact";
 
@@ -34,6 +37,9 @@ public class ContactDALEx extends SqliteBaseDALEx {
 
     @DatabaseField(Type = FieldType.VARCHAR)
     private String username; //姓名
+
+    @DatabaseField(isYellowPage = 0)
+    private int yellowpage;  //区别本地联系人和网络号码
 
     @DatabaseField(Type = FieldType.VARCHAR)
     private String usericon; // 头像
@@ -132,6 +138,14 @@ public class ContactDALEx extends SqliteBaseDALEx {
         this.usertel = usertel;
     }
 
+    public int getYellowPage(){
+        return yellowpage;
+    }
+
+    public void setYellowpage(int myellowpage){
+        this.yellowpage = myellowpage;
+    }
+
     /**
      * @Desc 通过一组id查询通讯录
      **/
@@ -227,4 +241,26 @@ public class ContactDALEx extends SqliteBaseDALEx {
         }
         return result;
     }
+
+    /**
+     * 获取所有yellow page列表
+     **/
+    public List<ContactDALEx> findAllYPContacter(){
+        String sql = String.format("select * from %s where %s = 1", TABLE_NAME,YELLOWPAGE);
+        return findList(sql);
+    }
+
+    /**
+     * 获取所有yellow page列表
+     **/
+    public List<ContactDALEx> findYPContacterById(String number){
+        String sql = String.format("select * from %s where %s = 1 and %s = %s order by %s asc", TABLE_NAME,YELLOWPAGE,USERPHONE,number,NAMEPINYIN);
+        Log.d(TAG, sql);
+        List<ContactDALEx> mList = findList(sql);
+        Log.d(TAG,"mList:"+(mList.size()));
+        return mList;
+    }
+
+
+
 }
